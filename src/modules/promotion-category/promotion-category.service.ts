@@ -3,6 +3,7 @@ import { Repository } from 'typeorm/repository/Repository';
 import { PromotionCategoryEntity } from './promotion-category.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreatePromotionCategoryDto } from './dtos/create-promotion-category.dto';
+import { PromotionCategory } from './promotion-category.interface';
 
 @Injectable()
 export class PromotionCategoryService {
@@ -11,14 +12,12 @@ export class PromotionCategoryService {
         private promotionCategoryRepository: Repository<PromotionCategoryEntity>,
     ) {}
 
-    async getAllPromotionCategory(): Promise<PromotionCategoryEntity[]> {
+    async getAllPromotionCategory(): Promise<PromotionCategory[]> {
         return await this.promotionCategoryRepository.find();
     }
 
     // if return entity is null then throw error
-    async getPromotionCategoryByID(
-        id: string,
-    ): Promise<PromotionCategoryEntity> {
+    async getPromotionCategoryByID(id: string): Promise<PromotionCategory> {
         const promotionCategory =
             await this.promotionCategoryRepository.findOneBy({ id });
         if (promotionCategory === null) {

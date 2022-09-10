@@ -71,7 +71,7 @@ export class PromotionController {
             });
         } catch (error) {
             res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                message: `Failed to creating promotion - ${error.message}`,
+                message: `Failed to create promotion - ${error.message}`,
             });
         }
     }
