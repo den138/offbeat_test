@@ -18,8 +18,8 @@ import { join } from 'path';
                 username: process.env.MYSQL_USERNAME,
                 password: process.env.MYSQL_PASSWORD,
                 database: process.env.MYSQL_DB,
-                synchronize:
-                    process.env.ENVIRONMENT === 'development' ? true : false,
+                // should avoid using synchronize in production environment
+                synchronize: process.env.ENVIRONMENT === 'development' || true,
                 autoLoadEntities: true,
                 entities: [
                     join(__dirname, '..', 'modules', '**', '*.entity.{ts,js}'),

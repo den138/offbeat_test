@@ -43,7 +43,7 @@ export class PromotionCategoryController {
             const promotionCategories =
                 await this.promotionCategoryService.getAllPromotionCategory();
 
-            const subPromotionCategories = promotionCategories.filter(
+            const promotionSubCategories = promotionCategories.filter(
                 (promotionCategory) =>
                     promotionCategory.parentPromotionCategoryId !== null,
             );
@@ -56,16 +56,16 @@ export class PromotionCategoryController {
             for (const promotionCategory of parentPromotionCategories) {
                 const children = (promotionCategory['children'] = []);
 
-                for (const subPromotionCategory of subPromotionCategories) {
+                for (const promotionSubCategory of promotionSubCategories) {
                     if (
                         promotionCategory.id ===
-                        subPromotionCategory.parentPromotionCategoryId
+                        promotionSubCategory.parentPromotionCategoryId
                     ) {
-                        delete subPromotionCategory[
+                        delete promotionSubCategory[
                             'parentPromotionCategoryId'
                         ];
-                        delete subPromotionCategory['subCategoryCount'];
-                        children.push(subPromotionCategory);
+                        delete promotionSubCategory['subCategoryCount'];
+                        children.push(promotionSubCategory);
                     }
                 }
             }

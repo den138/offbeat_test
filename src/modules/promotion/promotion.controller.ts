@@ -34,8 +34,8 @@ export class PromotionController {
         }
     }
 
-    // try to get promotion category by id from database
-    // if success, return status code 200 and promotion category entity
+    // try to get promotion by id from database
+    // if success, return status code 200 and promotion entity
     // if fail, return status code 500 and error message
     @Get(':id')
     async getPromotionByID(@Param() params, @Res() res: Response) {
@@ -57,26 +57,21 @@ export class PromotionController {
         }
     }
 
-    // try to insert a promotion category into database
+    // try to insert a promotion into database
     // if success, return status code 200 and inserted promotion entity
     // if fail, return status code 500 and error message
     @Post()
-    async addPromotionCategory(
-        @Body() body: CreatePromotionDto,
-        @Res() res: Response,
-    ) {
+    async addPromotion(@Body() body: CreatePromotionDto, @Res() res: Response) {
         try {
-            const promotionCategory = await this.promotionService.addPromotion(
-                body,
-            );
+            const promotion = await this.promotionService.addPromotion(body);
 
             res.status(HttpStatus.OK).json({
-                message: 'Successfully create promotion category',
-                data: promotionCategory,
+                message: 'Successfully create promotion',
+                data: promotion,
             });
         } catch (error) {
             res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-                message: `Failed to creating promotion category - ${error.message}`,
+                message: `Failed to creating promotion - ${error.message}`,
             });
         }
     }
