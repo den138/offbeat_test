@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "bec1ec6c-e8d9-481e-bf04-e36f1b9e204f",
+		"name": "offbeat_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Promotion Category",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add Top Cosmetics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top Cosmetics\",\n    \"subCategoryCount\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top Cosmetics sub-category - Top in Japan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top in Japan\",\n    \"parentPromotionCategoryId\": \"put Top Cosmetics promotion category Id here\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top Cosmetics sub-category - Top in Korea",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top in Korea\",\n    \"parentPromotionCategoryId\": \"put Top Cosmetics promotion category Id here\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top Cosmetics sub-category - Top in US",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top in US\",\n    \"parentPromotionCategoryId\": \"put Top Cosmetics promotion category Id here\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top 100 in the Supermarket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top 100 in the Supermarket\",\n    \"subCategoryCount\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top 100 in the Supermarket sub-category - All Meats",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"All Meats\",\n    \"parentPromotionCategoryId\": \"put Top 100 in the supermarket id here\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Top 100 in the Supermarket sub-category - Soft Drinks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Soft Drinks\",\n    \"parentPromotionCategoryId\": \"put Top 100 in the supermarket id here\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Today Picks",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Top Picks\",\n    \"subCategoryCount\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Get All Promotion Categories",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion-category/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Promotion Categories Tree Node JSON",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/promotion-category/all/tree-node-json",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category",
+										"all",
+										"tree-node-json"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Promotion Category by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/promotion-category/4c7af3eb-34c1-4ff4f",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion-category",
+										"4c7af3eb-34c1-4ff4f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.collectionVariables.set(\"host\", \"http://localhost:8080\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Promotion",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add Promotion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"name\": \"Hello\",\n\"description\": \"<div>Hello<br/>This is nice!</div>\",\n\"promotionCategoryId\": \"put promotion category id here\",\n\"imageUrlList\": [\"http://localhost:3000/assets/123.jpg\", \"http://localhost:3000/assets/456.jpg\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/promotion",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Get All Promotion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/promotion/all",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Promotion by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/promotion/0a82be62-8d67-4da6-9c8d-05844d4d5881",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"promotion",
+										"0a82be62-8d67-4da6-9c8d-05844d4d5881"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		}
+	]
+}

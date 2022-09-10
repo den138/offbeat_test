@@ -37,17 +37,22 @@ export class PromotionCategoryController {
         }
     }
 
+    // try to get all promotion categories from database
+    // if success, build and return a tree node with parent promotion category and promotion sub-category entities
+    // if fail, return status code 500 and error message
     @Get('all/tree-node-json')
     async getAllPromotionCategoryTreeNodeJson(@Res() res: Response) {
         try {
             const promotionCategories =
                 await this.promotionCategoryService.getAllPromotionCategory();
 
+            // find all promotion sub-category
             const promotionSubCategories = promotionCategories.filter(
                 (promotionCategory) =>
                     promotionCategory.parentPromotionCategoryId !== null,
             );
 
+            // find all parent promotion category
             const parentPromotionCategories = promotionCategories.filter(
                 (promotionCategory) =>
                     promotionCategory.parentPromotionCategoryId === null,
