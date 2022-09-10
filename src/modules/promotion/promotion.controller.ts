@@ -19,7 +19,7 @@ export class PromotionController {
     // if success, return status code 200 and all promotion entities
     // if fail, return status code 500 and error message
     @Get('all')
-    async getAllPromotionCategory(@Res() res: Response) {
+    async getAllPromotion(@Res() res: Response) {
         try {
             const promotion = await this.promotionService.getAllPromotion();
 

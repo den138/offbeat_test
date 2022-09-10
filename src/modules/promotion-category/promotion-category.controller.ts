@@ -37,6 +37,50 @@ export class PromotionCategoryController {
         }
     }
 
+    @Get('all/tree-node-json')
+    async getAllPromotionCategoryTreeNodeJson(@Res() res: Response) {
+        try {
+            const promotionCategories =
+                await this.promotionCategoryService.getAllPromotionCategory();
+
+            const subPromotionCategories = promotionCategories.filter(
+                (promotionCategory) =>
+                    promotionCategory.parentPromotionCategoryId !== null,
+            );
+
+            const parentPromotionCategories = promotionCategories.filter(
+                (promotionCategory) =>
+                    promotionCategory.parentPromotionCategoryId === null,
+            );
+
+            for (const promotionCategory of parentPromotionCategories) {
+                const children = (promotionCategory['children'] = []);
+
+                for (const subPromotionCategory of subPromotionCategories) {
+                    if (
+                        promotionCategory.id ===
+                        subPromotionCategory.parentPromotionCategoryId
+                    ) {
+                        delete subPromotionCategory[
+                            'parentPromotionCategoryId'
+                        ];
+                        delete subPromotionCategory['subCategoryCount'];
+                        children.push(subPromotionCategory);
+                    }
+                }
+            }
+
+            res.status(HttpStatus.OK).json({
+                message: 'Successfully get all promotion categories',
+                data: parentPromotionCategories,
+            });
+        } catch (error) {
+            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+                message: `Failed to get all promotion categories - ${error.message}`,
+            });
+        }
+    }
+
     // try to get promotion category by id from database
     // if success, return status code 200 and promotion category entity
     // if fail, return status code 500 and error message

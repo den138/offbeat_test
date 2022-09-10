@@ -1,33 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm/repository/Repository';
-import { PromotionCategory } from './promotion-category.entity';
+import { PromotionCategoryEntity } from './promotion-category.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreatePromotionCategoryDto } from './dtos/create-promotion-category.dto';
 
 @Injectable()
 export class PromotionCategoryService {
     constructor(
-        @InjectRepository(PromotionCategory)
-        private promotionCategoryRepository: Repository<PromotionCategory>,
+        @InjectRepository(PromotionCategoryEntity)
+        private promotionCategoryRepository: Repository<PromotionCategoryEntity>,
     ) {}
 
-    async getAllPromotionCategory(): Promise<PromotionCategory[]> {
+    async getAllPromotionCategory(): Promise<PromotionCategoryEntity[]> {
         return await this.promotionCategoryRepository.find();
     }
 
     // if return entity is null then throw error
-    async getPromotionCategoryByID(id: string): Promise<PromotionCategory> {
-        if (
-            (await this.promotionCategoryRepository.findOneBy({ id })) === null
-        ) {
+    async getPromotionCategoryByID(
+        id: string,
+    ): Promise<PromotionCategoryEntity> {
+        const promotionCategory =
+            await this.promotionCategoryRepository.findOneBy({ id });
+        if (promotionCategory === null) {
             throw new Error('This promotion category does not exist');
         }
-        return await this.promotionCategoryRepository.findOneBy({ id });
+        return promotionCategory;
     }
 
     async addPromotionCategory(
         promotionCategoryData: CreatePromotionCategoryDto,
-    ): Promise<PromotionCategory> {
+    ): Promise<PromotionCategoryEntity> {
         const promotionCategoryName = promotionCategoryData.name;
 
         // Search if there is a duplicate promotion category name in database

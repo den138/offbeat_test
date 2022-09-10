@@ -1,8 +1,8 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Promotion } from '../promotion/promotion.entity';
+import { PromotionEntity } from '../promotion/promotion.entity';
 
-@Entity()
-export class PromotionCategory {
+@Entity('promotion_category')
+export class PromotionCategoryEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -19,6 +19,11 @@ export class PromotionCategory {
     @Column({ name: 'sub_category_count', type: 'int', nullable: false })
     subCategoryCount: number;
 
-    @OneToMany(() => Promotion, (promotion) => promotion.promotionCategory)
-    promotion: Promotion[];
+    @OneToMany(
+        () => PromotionEntity,
+        (promotion) => promotion.promotionCategory,
+    )
+    promotion: PromotionEntity[];
+
+    children?: PromotionCategoryEntity[];
 }

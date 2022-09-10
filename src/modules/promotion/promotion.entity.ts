@@ -5,10 +5,10 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
-import { PromotionCategory } from '../promotion-category/promotion-category.entity';
+import { PromotionCategoryEntity } from '../promotion-category/promotion-category.entity';
 
-@Entity()
-export class Promotion {
+@Entity('promotion')
+export class PromotionEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -19,12 +19,12 @@ export class Promotion {
     description: string;
 
     @ManyToOne(
-        () => PromotionCategory,
+        () => PromotionCategoryEntity,
         (promotionCategory) => promotionCategory.promotion,
-        { nullable: false },
+        { nullable: false, eager: true },
     )
     @JoinColumn({ name: 'promotion_category_id' })
-    promotionCategory: PromotionCategory;
+    promotionCategory: PromotionCategoryEntity;
 
     @Column({ name: 'image_url_list', type: 'json', nullable: false })
     imageUrlList: string[];
