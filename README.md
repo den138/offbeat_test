@@ -16,6 +16,12 @@ Create and configure `.env` with reference in `.env.example`
 
 ![Database ERD](db-erd.jpeg)
 
+#### Testing
+
+If you are using Postman, you can import `offbeat_test.postman_collection.json` into Postman and call the API.
+
+-   TODO
+
 #### Design
 
 -   TODO
