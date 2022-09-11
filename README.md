@@ -1,5 +1,7 @@
 # offbeat test
 
+<br>
+
 ### Description
 
 ---
@@ -56,6 +58,7 @@ There are seven api endpoints in the application:
     -   Create a promotion
 
 <br>
+
 ##### Database design
 
 In database there are mainly two tables, promotion and promotion-category. Many promotion can have the same promotion category, so it is a many-to-one relationship. The table design is shown in the below diagram.
