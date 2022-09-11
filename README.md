@@ -37,7 +37,7 @@ Start the server, since synchronize is set to true, TypeORM will create the tabl
 
 ---
 
-##### Application design
+#### Application design
 
 Overview:
 A server for creating or getting promotion and promotion category
@@ -59,7 +59,7 @@ There are seven api endpoints in the application:
 
 <br>
 
-##### Database design
+#### Database design
 
 In database there are mainly two tables, promotion and promotion-category. Many promotion can have the same promotion category, so it is a many-to-one relationship. The table design is shown in the below diagram.
 
