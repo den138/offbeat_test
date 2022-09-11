@@ -34,6 +34,16 @@ describe('PromotionCategory', () => {
             });
     });
 
+    it('/POST promotion category by missing parts of request payload', () => {
+        return request(app.getHttpServer())
+            .post('/api/promotion-category')
+            .send({ name: 'hello' })
+            .expect(500)
+            .expect((res) => {
+                expect(res.body).toHaveProperty('message');
+            });
+    });
+
     afterAll(async () => {
         await app.close();
     });
