@@ -11,7 +11,7 @@ import { PromotionService } from './promotion.service';
 import { Response } from 'express';
 import { CreatePromotionDto } from './dtos/create-promotion.dto';
 
-@Controller('api/promotion')
+@Controller('/promotion')
 export class PromotionController {
     constructor(private readonly promotionService: PromotionService) {}
 

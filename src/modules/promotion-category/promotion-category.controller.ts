@@ -11,7 +11,7 @@ import { PromotionCategoryService } from './promotion-category.service';
 import { CreatePromotionCategoryDto } from './dtos/create-promotion-category.dto';
 import { Response } from 'express';
 
-@Controller('api/promotion-category')
+@Controller('/promotion-category')
 export class PromotionCategoryController {
     constructor(
         private readonly promotionCategoryService: PromotionCategoryService,

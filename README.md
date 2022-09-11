@@ -14,21 +14,21 @@ A RESTful API server built by Nestjs, MySQL and TypeORM
 
 ---
 
-Checkout to master branch
+Checkout to master branch\
 `git checkout master`
 
-Pull latest update from remote repository
+Pull latest update from remote repository\
 `git pull`
 
-Install dependencies
+Install dependencies\
 `npm install`
 
 Create and configure `.env` with reference in `.env.example`
 
-Create database in MySQL server
+Create database in MySQL server\
 `CREATE DATABASE offbeat_test;`
 
-Start the server, since synchronize is set to true, TypeORM will create the tables with the related entities
+Start the server, since synchronize is set to true, TypeORM will create the tables with the related entities\
 `npm run start`
 
 <br>
@@ -39,15 +39,10 @@ Start the server, since synchronize is set to true, TypeORM will create the tabl
 
 ##### Application design
 
-Nestjs and TypeORM work really well when they come together in building the application.
-
-As Nestjs provides clear design for us, it provides clear folder structure and components, at first it will take some time to build the project skeleton, but Nestjs makes the application more scalable and testable with its high compatibility with other libraries such as Express and Jest.
-
-TypeORM is another great tool to build the application, it saves a lot of effort by managing the entities for us, as we don't need to write repetitive SQL queries in code and by migrations or setting synchronize to true, it helps to create tables for us.
-
 ##### Database design
 
-In database, we mainly have two tables, promotion and promotion-category.
+In database there are mainly two tables, promotion and promotion-category. Many promotion can have the same promotion category, so it is a many-to-one relationship. The table design is shown in the below diagram.
+
 ![Database ERD](db-erd.jpeg)
 
 <br>
@@ -63,10 +58,10 @@ If you are using Postman, you can import `offbeat_test.postman_collection.json` 
 
 Unit testing and end-to-end testing are implemented in this application, simply run the tests by below commands.
 
-Run all unit tests
+Run all unit tests\
 `npm run test`
 
-Run all e2e tests
+Run all e2e tests\  
 `npm run test:e2e`
 
 <br>
@@ -75,4 +70,8 @@ Run all e2e tests
 
 ---
 
--   TODO
+Nestjs and TypeORM work really well when they come together in building the application.
+
+As Nestjs provides clear design, clear folder structure and components, at first it will take some time to build the project skeleton, but Nestjs makes the application more scalable and testable with its high compatibility with other libraries such as Express and Jest.
+
+TypeORM is another great tool to build the application, it saves a lot of effort by managing the entities for us, as we don't need to write repetitive SQL queries in code and by migrations or setting synchronize to true, it helps to create tables for us.

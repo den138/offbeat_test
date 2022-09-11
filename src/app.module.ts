@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PromotionModule } from './modules/promotion/promotion.module';
@@ -6,6 +6,9 @@ import { PromotionCategoryModule } from './modules/promotion-category/promotion-
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { join } from 'path';
+import { RouterModule } from '@nestjs/core';
+import { routes } from './app.routes';
+import { LoggerMiddleware } from './utils/logger.middleware';
 
 @Module({
     imports: [
@@ -29,8 +32,13 @@ import { join } from 'path';
         }),
         PromotionModule,
         PromotionCategoryModule,
+        RouterModule.register(routes),
     ],
     controllers: [AppController],
     providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(LoggerMiddleware).forRoutes('api');
+    }
+}
