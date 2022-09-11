@@ -46,16 +46,20 @@ There are seven api endpoints in the application:
 
 -   Promotion category
 
-    -   Get all promotion categories
-    -   Get all promotion categories by tree node json
-    -   Get promotion category by id
-    -   Create a promotion category
+| method | endpoints                                  | function                                       |
+| ------ | ------------------------------------------ | ---------------------------------------------- |
+| GET    | /api/promotion-category/all                | get all promotion categories                   |
+| GET    | /api/promotion-category/all/tree-node-json | get all promotion categories by tree node json |
+| GET    | /api/promotion-category/:id                | get promotion category by id                   |
+| POST   | /api/promotion-category                    | create a promotion category                    |
 
 -   Promotion
 
-    -   Get all promotion
-    -   Get promotion by id
-    -   Create a promotion
+| method | endpoints          | function            |
+| ------ | ------------------ | ------------------- |
+| GET    | /api/promotion/all | get all promotion   |
+| GET    | /api/promotion/:id | get promotion by id |
+| POST   | /api/promotion     | create a promotion  |
 
 <br>
 
