@@ -1,7 +1,5 @@
 # offbeat test
 
-<br>
-
 ### Description
 
 ---
