@@ -37,6 +37,17 @@ Start the server, since synchronize is set to true, TypeORM will create the tabl
 
 ---
 
+##### Application design
+
+Nestjs and TypeORM work really well when they come together in building the application.
+
+As Nestjs provides clear design for us, it provides clear folder structure and components, at first it will take some time to build the project skeleton, but Nestjs makes the application more scalable and testable with its high compatibility with other libraries such as Express and Jest.
+
+TypeORM is another great tool to build the application, it saves a lot of effort by managing the entities for us, as we don't need to write repetitive SQL queries in code and by migrations or setting synchronize to true, it helps to create tables for us.
+
+##### Database design
+
+In database, we mainly have two tables, promotion and promotion-category.
 ![Database ERD](db-erd.jpeg)
 
 <br>
