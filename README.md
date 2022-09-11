@@ -39,13 +39,30 @@ Start the server, since synchronize is set to true, TypeORM will create the tabl
 
 ##### Application design
 
+Overview:
+A server for creating or getting promotion and promotion category
+
+There are seven api endpoints in the application:
+
+-   Promotion category
+
+    -   Get all promotion categories
+    -   Get all promotion categories by tree node json
+    -   Get promotion category by id
+    -   Create a promotion category
+
+-   Promotion
+
+    -   Get all promotion
+    -   Get promotion by id
+    -   Create a promotion
+
+<br>
 ##### Database design
 
 In database there are mainly two tables, promotion and promotion-category. Many promotion can have the same promotion category, so it is a many-to-one relationship. The table design is shown in the below diagram.
 
 ![Database ERD](db-erd.jpeg)
-
-<br>
 
 ### Testing
 
@@ -61,17 +78,7 @@ Unit testing and end-to-end testing are implemented in this application, simply 
 Run all unit tests\
 `npm run test`
 
-Run all e2e tests\  
+Run all e2e tests\
 `npm run test:e2e`
 
 <br>
-
-### Afterthought
-
----
-
-Nestjs and TypeORM work really well when they come together in building the application.
-
-As Nestjs provides clear design, clear folder structure and components, at first it will take some time to build the project skeleton, but Nestjs makes the application more scalable and testable with its high compatibility with other libraries such as Express and Jest.
-
-TypeORM is another great tool to build the application, it saves a lot of effort by managing the entities for us, as we don't need to write repetitive SQL queries in code and by migrations or setting synchronize to true, it helps to create tables for us.
