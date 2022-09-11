@@ -284,14 +284,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/api/promotion-category/4c7af3eb-34c1-4ff4f",
+									"raw": "{{host}}/api/promotion-category/12f7275f-116a-4cd0-a520-ff2514dc4270",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
 										"api",
 										"promotion-category",
-										"4c7af3eb-34c1-4ff4f"
+										"12f7275f-116a-4cd0-a520-ff2514dc4270"
 									]
 								}
 							},
@@ -402,10 +402,30 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "host",
-			"value": ""
+			"value": "http://localhost:8080"
 		}
 	]
 }
